@@ -36,7 +36,7 @@ in
             "shfmt"
           ];
           lua = [ "stylua" ];
-          nix = [ "nixfmt" ];
+          "nix" = [ "nixfmt" ];
           "_" = [
             "squeeze_blanks"
             "trim_whitespace"

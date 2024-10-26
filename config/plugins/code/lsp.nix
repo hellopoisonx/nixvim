@@ -30,7 +30,6 @@ in
       };
       servers = lib.mergeAttrs {
         nixd.enable = true;
-        clangd.enable = true;
         lua_ls.enable = true;
         bashls.enable = true;
         bashls.filetypes = [
@@ -38,7 +37,6 @@ in
           "sh"
           "zsh"
         ];
-        elixirls.enable = true;
       } servers;
     };
   };
