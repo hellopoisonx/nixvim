@@ -32,7 +32,7 @@ in
           yaml
           markdown
         ]
-        ++ [ grammarPackages ];
+        ++ grammarPackages;
       settings = {
         auto_install = false;
       };
