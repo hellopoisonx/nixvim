@@ -28,8 +28,6 @@ in
     (nmap "<cmd>split<cr>" "sh")
     (nmap "<cmd>close<cr>" "q")
     (nmap "<cmd>bd<cr>" "bd")
-    (nmap "$" "<C-k>")
-    (nmap "^" "<C-j>")
     (nmap { __raw = "require('conform').format"; } "<leader>cf")
     (nmap { __raw = "require('flash').jump"; } "f")
     (nmap "<cmd>Lspsaga rename<cr>" "cr")
@@ -42,8 +40,5 @@ in
     (nmap "<cmd>Lspsaga finder ref<cr>" "gr")
     (nmap "<cmd>Lspsaga outline<cr>" "<leader>o")
     (nmap "<cmd>Lspsaga code_action<cr>" "<leader>ca")
-
-    (imap "$" "<C-k>")
-    (imap "^" "<C-j>")
   ];
 }
