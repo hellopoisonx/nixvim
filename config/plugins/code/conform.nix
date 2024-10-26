@@ -12,7 +12,7 @@ in
 {
   options = {
     formatters_by_ft = lib.mkOption {
-      type = lib.types.attrs;
+      type = with lib.types; attrsOf listOf str;
       default = { };
     };
     formatters = lib.mkOption {
