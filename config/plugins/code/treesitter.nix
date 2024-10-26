@@ -19,6 +19,8 @@
       c
       python
       html
+      heex
+      eex
     ];
     settings = {
       auto_install = false;
