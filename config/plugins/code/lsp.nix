@@ -4,7 +4,7 @@ let
 in
 {
   options.servers = lib.mkOption {
-    type = lib.types.attrs;
+    type = lib.types.attrsOf lib.types.anything;
     default = { };
   };
   config = {

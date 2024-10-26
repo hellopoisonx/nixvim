@@ -14,7 +14,11 @@ in
     default = [ ];
   };
   options.languageRegister = lib.mkOption {
-    type = with lib.types; attrsOf (listOf str);
+    type =
+      with lib.types;
+      attrsOf (submodule {
+        options."*" = lib.mkOption { type = with lib.types; listOf str; };
+      });
     default = { };
   };
   config = {
