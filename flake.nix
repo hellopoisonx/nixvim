@@ -5,10 +5,16 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    pre-commit-hooks.url = "github:cachix/git-hooks.nix";
   };
 
   outputs =
-    { nixvim, flake-parts, ... }@inputs:
+    {
+      nixvim,
+      flake-parts,
+      pre-commit-hooks,
+      ...
+    }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
@@ -36,6 +42,13 @@
           checks = {
             # Run `nix flake check .` to verify that your config is not broken
             default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+            pre-commit-check = pre-commit-hooks.lib.${system}.run {
+              src = ./.;
+              hooks = {
+                nixfmt-rfc-style.enable = true;
+              };
+            };
+
           };
 
           packages = {

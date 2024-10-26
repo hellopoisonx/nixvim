@@ -1,36 +1,45 @@
-{ ... }:
+{ lib, config, ... }:
+let
+  servers = config.servers;
+in
 {
-  plugins.lsp-format = {
-    enable = false; # use conform instead
-    lspServersToEnable = "all";
+  options.servers = lib.mkOption {
+    type = lib.types.attrs;
+    default = { };
   };
-  plugins.lsp = {
-    enable = true;
-    inlayHints = true;
-    keymaps = {
-      diagnostic = {
-        "]g" = "goto_next";
-        "[g" = "goto_prev";
-      };
-      lspBuf = {
-        # K = "hover";
-        # gr = "references";
-        gd = "definition";
-        gi = "implementation";
-        gt = "type_definition";
-      };
+  config = {
+    plugins.lsp-format = {
+      enable = false; # use conform instead
+      lspServersToEnable = "all";
     };
-    servers = {
-      nixd.enable = true;
-      clangd.enable = true;
-      lua_ls.enable = true;
-      bashls.enable = true;
-      bashls.filetypes = [
-        "bash"
-        "sh"
-        "zsh"
-      ];
-      elixirls.enable = true;
+    plugins.lsp = {
+      enable = true;
+      inlayHints = true;
+      keymaps = {
+        diagnostic = {
+          "]g" = "goto_next";
+          "[g" = "goto_prev";
+        };
+        lspBuf = {
+          # K = "hover";
+          # gr = "references";
+          gd = "definition";
+          gi = "implementation";
+          gt = "type_definition";
+        };
+      };
+      servers = lib.mergeAttrs {
+        nixd.enable = true;
+        clangd.enable = true;
+        lua_ls.enable = true;
+        bashls.enable = true;
+        bashls.filetypes = [
+          "bash"
+          "sh"
+          "zsh"
+        ];
+        elixirls.enable = true;
+      } servers;
     };
   };
 }
