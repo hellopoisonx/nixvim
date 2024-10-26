@@ -1,3 +1,1 @@
-{
-  plugins.flash.enable = true;
-}
+{ plugins.flash.enable = true; }

@@ -24,9 +24,7 @@
     timeoutlen = 300;
   };
 
-  extraPlugins = with pkgs; [
-    vimPlugins.mini-indentscope
-  ];
+  extraPlugins = with pkgs; [ vimPlugins.mini-indentscope ];
   extraConfigLua = ''
     vim.wo.foldmethod = 'expr'
     vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
