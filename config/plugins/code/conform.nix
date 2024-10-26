@@ -5,12 +5,12 @@
   ...
 }:
 let
-  formatters_by_ft = config.formatters_by_ft;
-  formatters = config.formatters;
+  formatters_by_ft = config.nixvim-conf.formatters_by_ft;
+  formatters = config.nixvim-conf.formatters;
 
 in
 {
-  options = {
+  options.nixvim-conf = {
     formatters_by_ft = lib.mkOption {
       type =
         with lib.types;

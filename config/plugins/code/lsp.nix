@@ -1,9 +1,9 @@
 { lib, config, ... }:
 let
-  servers = config.servers;
+  servers = config.nixvim-conf.servers;
 in
 {
-  options.servers = lib.mkOption {
+  options.nixvim-conf.servers = lib.mkOption {
     type = lib.types.attrsOf lib.types.anything;
     default = { };
   };

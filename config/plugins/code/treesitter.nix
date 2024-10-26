@@ -5,15 +5,15 @@
   ...
 }:
 let
-  grammarPackages = config.grammarPackages;
-  languageRegister = config.languageRegister;
+  grammarPackages = config.nixvim-conf.grammarPackages;
+  languageRegister = config.nixvim-conf.languageRegister;
 in
 {
-  options.grammarPackages = lib.mkOption {
+  options.nixvim-conf.grammarPackages = lib.mkOption {
     type = with lib.types; listOf package;
     default = [ ];
   };
-  options.languageRegister = lib.mkOption {
+  options.nixvim-conf.languageRegister = lib.mkOption {
     type =
       with lib.types;
       attrsOf (submodule {
