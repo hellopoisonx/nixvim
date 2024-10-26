@@ -7,6 +7,13 @@ let
       inherit key;
       mode = "n";
     });
+  tmap =
+    action:
+    (key: {
+      inherit action;
+      inherit key;
+      mode = "t";
+    });
   imap =
     action:
     (key: {
@@ -40,5 +47,7 @@ in
     (nmap "<cmd>Lspsaga finder ref<cr>" "gr")
     (nmap "<cmd>Lspsaga outline<cr>" "<leader>o")
     (nmap "<cmd>Lspsaga code_action<cr>" "<leader>ca")
+    (nmap "<cmd>Lspsaga term_toggle<cr>" "<C-/>")
+    (tmap "<cmd>Lspsaga term_toggle<cr>" "<C-/>")
   ];
 }

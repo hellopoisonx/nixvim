@@ -1,6 +1,6 @@
 {
   plugins.toggleterm = {
-    enable = true;
+    enable = false;
     settings = {
       hide_numbers = true;
       autochdir = false;
@@ -24,16 +24,16 @@
       };
     };
   };
-  keymaps = [
-    {
-      action = "<cmd>ToggleTerm<cr>";
-      mode = [ "n" ];
-      key = "<C-/>";
-    }
-    {
-      action = "<cmd>ToggleTerm<cr>";
-      mode = [ "t" ];
-      key = "<C-/>";
-    }
-  ];
+  # keymaps = [
+  #   {
+  #     action = "<cmd>ToggleTerm<cr>";
+  #     mode = [ "n" ];
+  #     key = "<C-/>";
+  #   }
+  #   {
+  #     action = "<cmd>ToggleTerm<cr>";
+  #     mode = [ "t" ];
+  #     key = "<C-/>";
+  #   }
+  # ];
 }
