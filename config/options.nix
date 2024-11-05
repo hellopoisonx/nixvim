@@ -5,12 +5,6 @@ let
   extraConf = p.config;
 in
 {
-  # hm specified
-  # enable = true;
-  # defaultEditor = true;
-  # vimdiffAlias = true;
-  #
-
   performance.combinePlugins.enable = true;
   vimAlias = true;
   viAlias = true;
