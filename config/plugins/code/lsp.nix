@@ -28,12 +28,6 @@ in
         nixd.enable = true;
         lua_ls.enable = true;
         bashls.enable = true;
-        elixirls.enable = true;
-        html.enable = true;
-        cssls.enable = true;
-        clangd.enable = true;
-        pyright.enable = true;
-        cmake.enable = true;
         bashls.filetypes = [
           "bash"
           "sh"

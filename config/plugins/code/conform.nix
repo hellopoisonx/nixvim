@@ -22,9 +22,6 @@ in
       enable = true;
       settings = {
         formatters_by_ft = {
-          c = [ "clang-format" ];
-          cpp = [ "clang-format" ];
-          cmake = [ "cmake_format" ];
           zsh = [
             "shellcheck"
             "shellharden"
@@ -36,9 +33,6 @@ in
             "shfmt"
           ];
           lua = [ "stylua" ];
-          elixir = [ "mix" ];
-          html = [ "superhtml" ];
-          python = [ "autopep8" ];
           "nix" = [ "nixfmt" ];
           "_" = [
             "squeeze_blanks"
@@ -67,9 +61,6 @@ in
           };
           stylua = {
             command = lib.getExe pkgs.stylua;
-          };
-          superhtml = {
-            command = lib.getExe' pkgs.superhtml "superhtml" + " fmt";
           };
         } // formatters;
       };
