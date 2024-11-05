@@ -16,30 +16,24 @@
         "x86_64-darwin"
         "aarch64-darwin"
       ];
-
       perSystem =
         { pkgs, system, ... }:
         let
           nixvimLib = nixvim.lib.${system};
-          nixvim' = nixvim.legacyPackages.${system};
           nixvimModule = {
             inherit pkgs;
-            module = import ./config; # import the module directly
-            extraSpecialArgs =
-              {
-              };
+            module = import ./config;
           };
-          nvim = nixvim'.makeNixvimWithModule nixvimModule;
         in
         {
           checks = {
-            # Run `nix flake check .` to verify that your config is not broken
             default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
           };
-
-          packages = {
-            default = nvim;
-          };
         };
+      flake = {
+        nixvimConfModules = {
+          nixvimConf = import ./config;
+        };
+      };
     };
 }
