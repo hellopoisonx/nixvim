@@ -8,8 +8,6 @@
         { name = "nvim_lsp"; }
         { name = "path"; }
         { name = "luasnip"; }
-        { name = "buffer"; }
-        { name = "cmdline"; }
         { name = "cmp-dap"; }
       ];
       settings = {
