@@ -37,6 +37,5 @@ in
     ''
     + extraConf;
   globals.mapleader = " ";
-  colorschemes.catppuccin.enable = false;
-  colorschemes.onedark.enable = true;
+  colorschemes.catppuccin.enable = true;
 }
