@@ -10,5 +10,6 @@
     ./telescope.nix
     ./noice.nix
     ./neoscroll.nix
+    ./auto-save.nix
   ];
 }
