@@ -1,7 +1,7 @@
 pkgs:
 let
   plugins = [
-    (import ./mini-indentscope.nix pkgs)
+    # (import ./mini-indentscope.nix pkgs)
     # (import ./code/elixir-tools.nix pkgs)
   ];
 in

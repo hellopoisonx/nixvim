@@ -11,5 +11,6 @@
     ./noice.nix
     ./neoscroll.nix
     ./auto-save.nix
+    ./mini.nix
   ];
 }

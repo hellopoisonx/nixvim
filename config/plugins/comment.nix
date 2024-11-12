@@ -1,6 +1,6 @@
 {
   plugins.comment = {
-    enable = true;
+    enable = false;
     settings = {
       toggler.line = "gcc";
       toggler.block = "gc";
