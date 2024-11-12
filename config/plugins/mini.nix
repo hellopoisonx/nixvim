@@ -15,11 +15,11 @@
         style = "glyph";
       };
       statusline = { };
-      inentscope = { };
+      indentscope = { };
       tabline = { };
       animate = { };
       ai = { };
-      autopairs = {
+      pairs = {
         modes = {
           insert = true;
           command = true;
