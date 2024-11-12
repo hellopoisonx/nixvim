@@ -33,6 +33,9 @@ in
   keymaps = [
     (imap "<Esc>" "jj")
 
+    (nmap "<cmd>bnext<cr>" "L")
+    (nmap "<cmd>bprev<cr>" "H")
+
     (nmap "<cmd>vertical resize -2<cr>" "<C-left>")
     (nmap "<cmd>vertical resize +2<cr>" "<C-right>")
     (nmap "<cmd>vsplit<cr>" "sv")
