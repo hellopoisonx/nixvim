@@ -37,6 +37,5 @@ in
     ''
     + extraConf;
   globals.mapleader = " ";
-  # colorschemes.catppuccin.enable = true;
-  colorscheme = "minicyan";
+  colorschemes.catppuccin.enable = true;
 }

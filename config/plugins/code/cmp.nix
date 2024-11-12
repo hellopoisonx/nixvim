@@ -22,8 +22,8 @@
         };
         formatting = {
           format = ''
-                        function(entry, vim_item)
-                          local kind_icons = {
+            function(entry, vim_item)
+            local kind_icons = {
               Text = "",
               Method = "󰆧",
               Function = "󰊕",
