@@ -26,6 +26,9 @@
           terminal = true;
         };
       };
+      files = { };
+      extra = { };
+      pick = { };
       surround = {
         mappings = {
           add = "gsa";
@@ -37,6 +40,7 @@
           update_n_lines = "gsn";
         };
       };
+      starter = { };
     };
   };
 }

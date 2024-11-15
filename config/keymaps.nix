@@ -42,7 +42,7 @@ in
     (nmap "<cmd>split<cr>" "sh")
     (nmap "<cmd>close<cr>" "q")
     (nmap "<cmd>bd<cr>" "bd")
-    (nmap { __raw = "require('conform').format"; } "<leader>cf")
+    (nmap { __raw = "require('conform').format"; } "<leader>fm")
 
     (nmap { __raw = "require('flash').jump"; } "f")
     (vmap { __raw = "require('flash').jump"; } "f")
@@ -75,5 +75,13 @@ in
     (nmap "<C-w>j" "<A-j>")
     (nmap "<C-w>k" "<A-k>")
     (nmap "<C-w>l" "<A-l>")
+
+    (nmap "<cmd>Pick files<cr>" "<leader>ff")
+    (nmap "<cmd>Pick buffers<cr>" "<leader>fb")
+    (nmap "<cmd>Pick help<cr>" "<leader>fh")
+    (nmap "<cmd>Pick grep_live<cr>" "<leader>fg")
+    (nmap "<cmd>Pick diagnostic<cr>" "<leader>fd")
+    (nmap { __raw = "MiniFiles.open"; } "<leader>fe")
+    (nmap { __raw = "MiniFiles.reset"; } "<leader>fe")
   ];
 }

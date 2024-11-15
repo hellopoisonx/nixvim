@@ -1,6 +1,6 @@
 {
   plugins.nvim-tree = {
-    enable = true;
+    enable = false;
     autoReloadOnWrite = true;
     autoClose = true;
     syncRootWithCwd = false;
@@ -27,12 +27,12 @@
       '';
     };
   };
-  plugins.web-devicons.enable = true; # dep
-  keymaps = [
-    {
-      action = "<cmd>NvimTreeToggle<cr>";
-      mode = [ "n" ];
-      key = "<leader>fe";
-    }
-  ];
+  # plugins.web-devicons.enable = true; # dep
+  # keymaps = [
+  #   {
+  #     action = "<cmd>NvimTreeToggle<cr>";
+  #     mode = [ "n" ];
+  #     key = "<leader>fe";
+  #   }
+  # ];
 }
