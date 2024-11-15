@@ -82,6 +82,6 @@ in
     (nmap "<cmd>Pick grep_live<cr>" "<leader>fg")
     (nmap "<cmd>Pick diagnostic<cr>" "<leader>fd")
     (nmap { __raw = "MiniFiles.open"; } "<leader>fe")
-    (nmap { __raw = "MiniFiles.reset"; } "<leader>fe")
+    (nmap { __raw = "MiniFiles.reset"; } "<leader>fr")
   ];
 }
