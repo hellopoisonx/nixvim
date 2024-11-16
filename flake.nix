@@ -27,6 +27,7 @@
             module = import ./config; # import the module directly
           };
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
+          animation = nvim.extend { plugins.mini.modules.animate = { }; };
         in
         {
           checks = {
@@ -35,6 +36,8 @@
 
           packages = {
             default = nvim;
+            without_animation = nvim;
+            with_animation = animation;
           };
         };
     };

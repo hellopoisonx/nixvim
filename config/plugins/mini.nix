@@ -17,7 +17,6 @@
       statusline = { };
       indentscope = { };
       tabline = { };
-      animate = { };
       ai = { };
       pairs = {
         modes = {
