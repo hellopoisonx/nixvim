@@ -60,8 +60,8 @@ in
 
     (tmap "<C-\\><C-n>" "<ESC>")
     (nmap "<cmd>terminal<cr>" "<leader>t")
-    (nmap "<cmd>Lspsaga term_toggle<cr>" "<leader>ft")
-    (tmap "<cmd>Lspsaga term_toggle<cr>" "<leader>ft")
+    (nmap "<cmd>ToggleTerm<cr>" "<C-t>")
+    (tmap "<cmd>ToggleTerm<cr>" "<C-t>")
 
     (tmap "<C-\\><C-N><C-w>h" "<A-h>")
     (tmap "<C-\\><C-N><C-w>j" "<A-j>")

@@ -18,13 +18,5 @@
         "BufWinEnter"
       ];
     }
-    {
-      command = "TransparentEnable";
-      desc = "Enable transparent background";
-      once = true;
-      event = [
-        "VimEnter"
-      ];
-    }
   ];
 }

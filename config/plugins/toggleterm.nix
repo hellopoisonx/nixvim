@@ -1,6 +1,6 @@
 {
   plugins.toggleterm = {
-    enable = false;
+    enable = true;
     settings = {
       hide_numbers = true;
       autochdir = false;
