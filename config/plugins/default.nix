@@ -1,7 +1,6 @@
 {
   imports = [
     ./code
-    ./lualine.nix
     ./flash.nix
     ./toggleterm.nix
     ./noice.nix
