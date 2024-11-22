@@ -6,6 +6,5 @@
     ./noice.nix
     ./auto-save.nix
     ./mini.nix
-    ./transparent.nix
   ];
 }

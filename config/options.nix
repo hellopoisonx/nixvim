@@ -1,9 +1,3 @@
-{ pkgs, ... }:
-let
-  p = import ./plugins/extraPlugins.nix pkgs;
-  extraPlugins = p.p;
-  extraConf = p.config;
-in
 {
   performance.combinePlugins.enable = true;
   vimAlias = true;
@@ -29,13 +23,11 @@ in
     timeoutlen = 300;
   };
 
-  extraPlugins = extraPlugins;
-  extraConfigLua =
+  extraConfigLua = # lua
     ''
       vim.wo.foldmethod = 'expr'
       vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    ''
-    + extraConf;
+    '';
   globals.mapleader = " ";
   colorschemes.catppuccin.enable = true;
 }
