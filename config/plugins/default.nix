@@ -7,5 +7,6 @@
     ./auto-save.nix
     ./mini.nix
     ./text-case.nix
+    ./spider.nix
   ];
 }
