@@ -6,5 +6,6 @@
     ./noice.nix
     ./auto-save.nix
     ./mini.nix
+    ./text-case.nix
   ];
 }
