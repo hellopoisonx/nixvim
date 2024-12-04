@@ -15,15 +15,8 @@
         gt = "type_definition";
       };
     };
-    servers = {
-      nixd.enable = true;
-      lua_ls.enable = true;
-      bashls.enable = true;
-      bashls.filetypes = [
-        "bash"
-        "sh"
-        "zsh"
-      ];
-    };
+    servers =
+      {
+      };
   };
 }

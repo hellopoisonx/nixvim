@@ -7,34 +7,17 @@
     enable = true;
 
     grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-      bash
-      json
+      vimdoc
+      vim
       lua
-      make
       nix
-      yaml
-      markdown
-      cpp
-      c
-      python
-      html
-      heex
-      eex
-      elixir
-      html
-      css
-      scss
-      javascript
     ];
     settings = {
       auto_install = false;
     };
-    languageRegister = {
-      elixir = [
-        "ex"
-        "exs"
-      ];
-    };
+    languageRegister =
+      {
+      };
     folding = true;
     nixGrammars = true;
     nixvimInjections = true;
