@@ -13,9 +13,9 @@
     signcolumn = "yes";
     ignorecase = true;
     smartcase = true;
-    tabstop = 2;
-    shiftwidth = 2;
-    softtabstop = 2;
+    tabstop = 4;
+    shiftwidth = 4;
+    softtabstop = 4;
     expandtab = true;
     smarttab = true;
     cursorline = true;
