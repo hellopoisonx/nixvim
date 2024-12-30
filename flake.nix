@@ -27,7 +27,49 @@
             module = import ./config; # import the module directly
           };
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
-          animation = nvim.extend { plugins.mini.modules.animate = { }; };
+          base = nvim.extend {
+            plugins.lsp.servers = {
+              nixd.enable = true;
+              lua_ls.enable = true;
+              bashls.enable = true;
+              bashls.filetypes = [
+                "bash"
+                "sh"
+                "zsh"
+              ];
+            };
+            plugins.treesitter.grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+              json
+              xml
+              yaml
+              toml
+              regex
+              markdown
+              bash
+              lua
+            ];
+            plugins.conform-nvim.settings = {
+              formatters_by_ft = {
+                sh = [
+                  "shellcheck"
+                  "shellharden"
+                  "shfmt"
+                ];
+                bash = [
+                  "shellcheck"
+                  "shellharden"
+                  "shfmt"
+                ];
+                lua = [ "stylua" ];
+                "nix" = [ "nixfmt" ];
+                "_" = [
+                  "squeeze_blanks"
+                  "trim_whitespace"
+                  "trim_newlines"
+                ];
+              };
+            };
+          };
         in
         {
           checks = {
@@ -35,9 +77,13 @@
           };
 
           packages = {
-            default = nvim;
-            without_animation = nvim;
-            with_animation = animation;
+            default = base;
+            c-cpp = (
+              import ./variants/c-cpp.nix {
+                inherit pkgs;
+                inherit base;
+              }
+            );
           };
         };
     };
