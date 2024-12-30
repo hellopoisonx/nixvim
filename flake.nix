@@ -8,7 +8,12 @@
   };
 
   outputs =
-    { nixvim, flake-parts, ... }@inputs:
+    {
+      nixvim,
+      flake-parts,
+      lib,
+      ...
+    }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
@@ -68,6 +73,26 @@
                   "trim_newlines"
                 ];
               };
+              formatters = {
+                shellcheck = {
+                  command = lib.getExe pkgs.shellcheck;
+                };
+                shfmt = {
+                  command = lib.getExe pkgs.shfmt;
+                };
+                shellharden = {
+                  command = lib.getExe pkgs.shellharden;
+                };
+                squeeze_blanks = {
+                  command = lib.getExe' pkgs.coreutils "cat";
+                };
+                nixfmt = {
+                  command = lib.getExe' pkgs.nixfmt-rfc-style "nixfmt";
+                };
+                stylua = {
+                  command = lib.getExe pkgs.stylua;
+                };
+              };
             };
           };
         in
@@ -82,6 +107,7 @@
               import ./variants/c-cpp.nix {
                 inherit pkgs;
                 inherit base;
+                inherit lib;
               }
             );
           };

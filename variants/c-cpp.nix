@@ -1,6 +1,7 @@
 {
   pkgs,
   base,
+  lib,
   ...
 }:
 base.extend {
@@ -21,6 +22,10 @@ base.extend {
       hpp = [ "clang-format" ];
       h = [ "clang-format" ];
       cmake = [ "cmake_format" ];
+    };
+    formatters = {
+      clang-format.command = lib.getExe' pkgs.clang-tools "clang-format";
+      cmake_format.command = lib.getExe' pkgs.cmake-format "cmake-format";
     };
   };
 }
