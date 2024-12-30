@@ -11,7 +11,6 @@
     {
       nixvim,
       flake-parts,
-      lib,
       ...
     }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -31,6 +30,7 @@
             inherit pkgs;
             module = import ./config; # import the module directly
           };
+          lib = pkgs.lib;
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
           base = nvim.extend {
             plugins.lsp.servers = {
